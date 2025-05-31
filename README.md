@@ -1,246 +1,195 @@
-# Template for Hackathon
-이 레파지토리는 참여자들이 해커톤 결과물을 위한 레파지토리 생성시에 참고할 내용들을 담고 있습니다.
-1. 레파지토리 생성
-2. 레파지토리 구성
-3. README.md 가이드라인
-4. README.md 작성팁
-<br/>
+# WeCam 프로젝트 소개
+
+## 1. 프로젝트 소개
+
+### 1.1. 개발배경 및 필요성
+
+대학생 조직(학생회)의 협업 방식은 여전히 비효율적인 단톡방/구글드라이브 중심으로 운영되고 있으며, 업무 인수인계, 공지사항 전달, 일정 관리 등에서 체계적인 플랫폼이 부재한 상황입니다.
+WeCam은 학생회 전용 협업 플랫폼으로, 학생회 운영의 효율화와 학생과의 소통 강화를 목표로 기획되었습니다.
+
+### 1.2. 개발 목표 및 주요 내용
+
+* **목표**: 학생회 중심의 체계적인 협업 플랫폼 개발
+* **주요 내용**:
+
+  * 학생회 조직별 워크스페이스 제공
+  * 일정 및 업무 관리 기능 제공
+  * 인수인계 기능 제공
+  * 공지사항 공유 기능 (학생회 ↔ 일반 학생)
+  * 자동 채팅방 생성 및 알림 기능
+
+### 1.3. 세부내용
+
+* **조직 구조**: 총학생회 → 단과대학 학생회 → 학과 학생회 (계층형 워크스페이스 구성)
+* **가입 및 승인**:
+
+  * 학생회는 승인을 통해 워크스페이스 생성
+  * 일반 학생은 학교/학과 선택 후 가입
+* **기능**:
+
+  * 캘린더 기반 일정 관리
+  * 업무 인수인계 게시판
+  * 공지사항 및 설문 기능
+  * 실시간 알림 및 채팅 기능
+
+### 1.4. 기존 서비스 대비 차별성
+
+* **학생회 중심 설계**: 일반 협업툴(슬랙, 노션 등)은 학생회를 위한 구조가 아님
+* **학교 조직 체계 자동 구성 기능**
+* **학생 대상 공지/채팅 연동 기능**
+* **학생회 교체 시 인수인계 기능 내장**
+
+### 1.5. 사회적가치 도입 계획
+
+* 학내 커뮤니티 활성화
+* 학생회의 투명한 운영 문화 조성
+* 업무 자동화로 학생회 운영 부담 경감
+* 일반 학생의 참여 확대 (알림/설문 등)
+
+---
+
+## 2. 상세설계
+
+### 2.1. 시스템 구성도
 
 
-## 1. 레파지토리 생성
-- [https://classroom.github.com/a/r_quqgd5](https://classroom.github.com/a/r_quqgd5)
-- 위 Github Classroom 링크에 접속해 본인 조의 github 레파지토리를 생성하세요.
-<img src="https://github.com/user-attachments/assets/deccbc01-9c36-4757-be92-b8ff5c40ec26" width="600px" alt="Classroom에서 team 생성" />
+### 2.2. 사용 기술
 
-- 레파지토리 생성 시 팀 이름은 `{연도}-TEAM-{조번호}` 형식으로 생성하세요.
-- 예를 들어, 2025년도 3조의 팀명은 `2025-TEAM-03` 입니다.
-- 이 경우 `PNUSW-2025-TEAM-03`이라는 이름으로 레포지토리가 생성됩니다.
-<br/>
+| 구분       | 기술 스택                   | 버전            |
+| -------- | ----------------------- | ------------- |
+| Frontend | Next.js (React 기반)      | 14.x          |
+| Frontend | Tailwind CSS            | 3.x           |
+| Backend  | Spring Boot             | 3.2.x         |
+| Backend  | Java                    | 21 (Corretto) |
+| Database | MySQL (AWS RDS)         | 8.x           |
+| Infra    | AWS EC2                 | -             |
+| Infra    | Docker / Docker Compose | 최신            |
+| Infra    | GitHub Actions (CI/CD)  | -             |
 
+---
 
-## 2. 레파지토리 구성
-- 레파지토리 내에 `README.md` 파일 생성하고 아래의 가이드라인과 작성팁을 참고하여 파일을 작성하세요.
-- 레파지토리 내에 `docs` 폴더를 생성하고 폴더 내에는 과제 수행 하면서 작성한 각종 보고서, 발표자료를 올려둡니다.
-- 그 밖에 레파지토리의 폴더 구성은 과제 결과물에 따라 자유롭게 구성하되 가급적 코드의 목적이나 기능에 따라 폴더를 나누어 구성하세요.  
-<br/>
+## 3. 개발결과
 
+### 3.1. 전체시스템 흐름도
 
-## 3. README.md 가이드라인
-- README 파일 작성시에 아래의 5가지 항목의 내용은 필수적으로 포함해야 합니다.
-- 아래의 7가지 항목이외에 프로젝트의 이해를 돕기위한 내용을 추가해도 됩니다.
-- `SAMPLE_README.md`가 단순한 형태의 예제이니 참고하세요.
-```markdown
-### 1. 프로젝트 소개
-#### 1.1. 개발배경 및 필요성
-> 프로젝트를 실행하게 된 배경 및 필요성을 작성하세요.
+### 3.2. 기능설명
 
-#### 1.2. 개발 목표 및 주요 내용
-> 프로젝트의 목표 및 주요 내용을 작성하세요.
+#### 로그인 페이지
 
-#### 1.3. 세부내용
-> 위 내용을 작성하세요.
+* 이메일/비밀번호 입력 후 유효성 검사
+* 유효한 경우 로그인 버튼 활성화
+* 로그인 성공 시 대시보드로 이동
+* 로그인 실패 시 에러 메시지 표시
 
-#### 1.4. 기존 서비스 대비 차별성
-> 위 내용을 작성하세요.
+#### 워크스페이스 생성
 
-#### 1.5. 사회적가치 도입 계획
-> 위 내용을 작성하세요.
+* 학생회 승인 프로세스 포함 (초대코드 기반 자동 승인 / 수동 승인)
+* 계층형 조직 구조 자동 구성
 
+#### 일정 관리
 
-### 2. 상세설계
-#### 2.1. 시스템 구성도
-> 시스템 구성도(infra, front, back등의 node 간의 관계)의 사진을 삽입하세요.
+* 일정 추가 시 알림 자동 발송
+* 캘린더 뷰 제공
 
-#### 2.1. 사용 기술
-> 스택 별(backend, frontend, designer등) 사용한 기술 및 버전을 작성하세요.
-> 
-> ex) React.Js - React14, Node.js - v20.0.2
+#### 공지사항
 
-### 3. 개발결과
-#### 3.1. 전체시스템 흐름도
-> 위 내용을 작성하세요.
+* 학생회 → 일반 학생 대상 공지 기능
+* 공지 열람 여부 확인 가능
 
-#### 3.2. 기능설명
-> 각 페이지 마다 사용자의 입력의 종류와 입력에 따른 결과 설명 및 시연 영상.
-> 
-> ex. 로그인 페이지:
-> 
-> - 이메일 주소와 비밀번호를 입력하면 입력창에서 유효성 검사가 진행됩니다.
-> 
-> - 요효성 검사를 통과하지 못한 경우, 각 경고 문구가 입력창 하단에 표시됩니다.
->   
-> - 유효성 검사를 통과한 경우, 로그인 버튼이 활성화 됩니다.
->   
-> - 로그인 버튼을 클릭 시, 입력한 이메일 주소와 비밀번호에 대한 계정이 있는지 확인합니다.
->   
-> - 계정이 없는 경우, 경고문구가 나타납니다.
->
-> (영상)
+#### 업무 인수인계
 
-#### 3.3. 기능명세서
-> 개발한 제품에 대한 기능명세서를 작성해 제출하세요.
-> 
-> 노션 링크, 한글 문서, pdf 파일, 구글 스프레드 시트 등...
+* 게시판 형태로 운영
+* 이전 학생회 기수와 연동 가능
 
-#### 3.4. 디렉토리 구조
-> 위 레포지토리의 디렉토리 구조를 설명하세요.
+#### 채팅
 
-### 4. 설치 및 사용 방법
-> 제품을 설치하기 위헤 필요한 소프트웨어 및 설치 방법을 작성하세요.
->
-> 제품을 설치하고 난 후, 실행 할 수 있는 방법을 작성하세요.
+* 조직별 자동 채팅방 생성
+* 실시간 메시지 전송 및 알림
 
-### 5. 소개 및 시연 영상
-> 프로젝트에 대한 소개와 시연 영상을 넣으세요.
-> 프로젝트 소개 동영상을 교육원 메일(swedu@pusan.ac.kr)로 제출 이후 센터에서 부여받은 youtube URL주소를 넣으세요.
+> (시연 영상은 영상 링크 or 스크린샷 첨부)
 
-### 6. 팀 소개
-> 팀원 소개 & 구성원 별 역할 분담 & 간단한 연락처를 작성하세요.
+### 3.3. 기능명세서
 
-### 7. 해커톤 참여 후기
-> 팀원 별 해커톤 참여 후기를 작성하세요.
+> \[노션 링크/구글 스프레드 시트/문서 링크 삽입]
+
+### 3.4. 디렉토리 구조
+
 ```
-<br/>
+WeCam-Backend/
+├── src/
+│   ├── main/
+│   │   ├── java/com/wecam/
+│   │   ├── resources/
+│   │   │   ├── application.yml
+│   │   │   ├── static/
+│   │   │   ├── templates/
+├── build.gradle
+├── Dockerfile
 
-
-## 4. README.md 작성 팁
-- 마크다운 언어를 이용해 README.md 파일을 작성할 때 참고할 수 있는 마크다운 언어 문법을 공유합니다.
-- 다양한 예제와 보다 자세한 문법은 [이 문서](https://www.markdownguide.org/basic-syntax/)를 참고하세요.
-
-### 4.1. 헤더 Header
+WeCam-Frontend/
+├── src/
+│   ├── app/
+│   ├── components/
+│   ├── pages/
+│   ├── public/
+│   ├── styles/
+├── package.json
+├── tailwind.config.js
+├── Dockerfile
 ```
-# This is a Header 1
-## This is a Header 2
-### This is a Header 3
-#### This is a Header 4
-##### This is a Header 5
-###### This is a Header 6
-####### This is a Header 7 은 지원되지 않습니다.
+
+---
+
+## 4. 설치 및 사용 방법
+
+### 설치
+
+* Docker / Docker Compose 설치
+* Node.js / npm 설치
+
+### 실행 방법
+
+#### Backend
+
+```bash
+./gradlew build
+java -jar build/libs/wecam-backend.jar
 ```
 
-# This is a Header 1
-## This is a Header 2
-### This is a Header 3
-#### This is a Header 4
-##### This is a Header 5
-###### This is a Header 6
-####### This is a Header 7 은 지원되지 않습니다.
-<br />
+#### Frontend
 
-### 4.2. 인용문 BlockQuote
+```bash
+npm install
+npm start
 ```
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
+
+#### Docker Compose (전체 실행 시)
+
+```bash
+docker-compose up --build
 ```
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
-<br />
 
-### 4.3. 목록 List
-* **Ordered List**
-```
-1. first
-2. second
-3. third  
-```
-1. first
-2. second
-3. third
-<br />
+---
 
-* **Unordered List**
-```
-* 하나
-  * 둘
+## 5. 소개 및 시연 영상
 
-+ 하나
-  + 둘
+---
 
-- 하나
-  - 둘
-```
-* 하나
-  * 둘
+## 6. 팀 소개
 
-+ 하나
-  + 둘
+| 이름  | 역할          | 연락처             |
+| --- | ----------- | --------------- |
+| 김예슬 | 팀장 / 백엔드 개발 | yesul0718@pusan.ac.kr |
+| 김동인 | 백엔드 개발 | |
+| 문진서 | 프론트엔드 개발   |                 |
+| 김나림 | 프론트엔드 개발    |                 |
+| 김예원 | 디자이너        |                 |
+| 김대욱 | AI 서비스 연동   |                 |
+| 박장현 | 기획   |                 |
 
-- 하나
-  - 둘
-<br />
+---
 
-### 4.4. 코드 CodeBlock
-* 코드 블럭 이용 '``'
-```
-여러줄 주석 "```" 이용
-"```
-#include <stdio.h>
-int main(void){
-  printf("Hello world!");
-  return 0;
-}
-```"
-
-단어 주석 "`" 이용
-"`Hello world`"
-
-* 큰 따움표(") 없이 사용하세요.
-``` 
-<br />
-
-### 4.5. 링크 Link
-```
-[Title](link)
-[부산대 소프트웨어융합교육원](https://swedu.pusan.ac.kr/swedu/index.do)
-
-<link>
-<https://swedu.pusan.ac.kr>
-``` 
-[부산대 소프트웨어융합교육원](https://swedu.pusan.ac.kr)
-
-<https://swedu.pusan.ac.kr>  
-<br />
-
-### 4.6. 강조 Highlighting
-```
-*single asterisks*
-_single underscores_
-**double asterisks**
-__double underscores__
-~~cancelline~~
-```
-*single asterisks* <br />
-_single underscores_ <br />
-**double asterisks** <br />
-__double underscores__ <br />
-~~cancelline~~  <br />
-<br />
-
-### 4.7. 이미지 Image
-```
-<img src="/path/to/img.jpg" width="600px" title="Title" alt="Alt text"></img>
-![Alt text](/path/to/img.jpg "Optional title")
-```
-<img src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/be7beb64-490f-4480-b121-f25cde7f2a8d" width="600px" title="부산대학교 소프트웨어융합교육원" alt="부산대학교 소프트웨어융합교육원"></img>
-<br/>
-![부산대학교 소프트웨어융합교육원](https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/884154bb-28f6-4498-9f64-a8a878972951, "부산대학교 소프트웨어융합교육원")
-<br/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## 7. 해커톤 참여 후기
 
 
 
